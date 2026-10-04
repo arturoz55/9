@@ -2,6 +2,8 @@
 
 A paper-trading demo of a perpetual futures exchange: one static page, no build step, no wallet.
 
+- Original illustrated emblem for every coin and pixel avatars for traders, all generated in-page
+- Coin detail panel (chart, open interest, funding, copyable address), watchlist with stars, leaderboard with 24H/7D/30D
 - Hero with live "deepest pools" board, token-address checker and a scrolling feed of demo fills
 - Stats strip, small-cap market cards (sortable, load more), six pricing safeguards
 - Interactive skew-pricing chart with market picker and two sliders
