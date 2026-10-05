@@ -1,6 +1,7 @@
 <title>Kestrel Perps</title>
 <meta name="description" content="Kestrel: perps on any coin with a real pool. Leverage and open-interest limits are set by what it costs to move each pool. Demo network, paper trading.">
 <meta name="theme-color" content="#0A0A0A">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20200%20190%22%3E%3Crect%20x%3D%22-5%22%20y%3D%22-10%22%20width%3D%22210%22%20height%3D%22210%22%20rx%3D%2240%22%20fill%3D%22%230a0a0a%22/%3E%3Cg%20fill%3D%22%23f5f5f5%22%3E%3Cpolygon%20points%3D%2288%2C62%2060%2C57%2032%2C60%206%2C70%2022%2C82%2014%2C88%2036%2C92%2030%2C100%2056%2C100%2088%2C92%22/%3E%3Cpolygon%20points%3D%22112%2C62%20140%2C57%20168%2C60%20194%2C70%20178%2C82%20186%2C88%20164%2C92%20170%2C100%20144%2C100%20112%2C92%22/%3E%3Cpolygon%20points%3D%2292%2C126%20100%2C136%20108%2C126%20117%2C170%20107%2C164%20100%2C178%2093%2C164%2083%2C170%22/%3E%3Cpolygon%20points%3D%2294%2C50%20106%2C50%20113%2C82%20108%2C126%20100%2C136%2092%2C126%2087%2C82%22/%3E%3Cpolygon%20points%3D%22100%2C10%20112%2C30%20106%2C48%2094%2C48%2088%2C30%22/%3E%3C/g%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500;600&display=swap">
@@ -54,7 +55,7 @@ kbd{font:11px var(--mono);border:1px solid var(--line2);border-radius:5px;paddin
 .burger i{display:block;width:18px;height:1.5px;background:var(--fg)}
 @media (max-width:400px){.nav .wrap{gap:12px}.logo{font-size:0;gap:0}.logo svg{width:22px;height:22px}.btn-w{padding:8px 11px}}
 @media (max-width:1520px){.chain{display:none}}
-@media (max-width:1180px){.links{display:none}}
+@media (max-width:1260px){.links{display:none}}
 @media (max-width:640px){.search{width:auto;flex:1 1 auto}.search span,.search kbd{display:none}.nav .sp{display:none}}
 .drawer{position:fixed;inset:56px 0 auto 0;z-index:39;background:var(--bg);border-bottom:1px solid var(--line);padding:12px 16px 20px;display:grid;gap:4px}
 .drawer a{padding:10px 0;border-bottom:1px solid var(--line);font-size:16px}
@@ -345,23 +346,114 @@ img.coin{display:block;border-radius:50%;flex:none;background:#1a1a1a;box-shadow
 .lbt tbody tr{transition:background .15s}
 .lbt tbody tr:hover{background:#141414}
 .lbt tr.me td{background:rgba(255,181,71,.06)}
+
+/* v4: logo, emblem, visual details */
+.logo-wrap{position:relative}
+.logo{gap:9px}
+.logo .mark{width:26px;height:25px;fill:var(--fg);overflow:visible}
+.mark .lw,.mark .rw{transform-box:fill-box;transition:transform .3s}
+.mark .lw{transform-origin:100% 30%}.mark .rw{transform-origin:0 30%}
+.logo-wrap:hover .logo .lw,.logo:focus-visible .lw{animation:flapL .55s ease-in-out infinite}
+.logo-wrap:hover .logo .rw,.logo:focus-visible .rw{animation:flapR .55s ease-in-out infinite}
+@keyframes flapL{50%{transform:scaleX(.72) rotate(-6deg)}}
+@keyframes flapR{50%{transform:scaleX(.72) rotate(6deg)}}
+.logo-pop{position:absolute;top:calc(100% + 14px);left:-8px;width:330px;max-width:calc(100vw - 24px);background:var(--bg2);border:1px solid var(--line2);border-radius:14px;padding:16px;box-shadow:0 20px 60px rgba(0,0,0,.6);opacity:0;visibility:hidden;transform:translateY(-6px) scale(.98);transform-origin:20px 0;transition:opacity .18s,transform .18s,visibility 0s .18s;z-index:50}
+.logo-pop::before{content:"";position:absolute;top:-6px;left:22px;width:10px;height:10px;background:var(--bg2);border-left:1px solid var(--line2);border-top:1px solid var(--line2);transform:rotate(45deg)}
+.logo-pop::after{content:"";position:absolute;left:0;right:0;top:-16px;height:16px}
+.logo-wrap:hover .logo-pop,.logo-wrap:focus-within .logo-pop{opacity:1;visibility:visible;transform:none;transition:opacity .18s,transform .18s}
+.lp-head{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+.lp-head .mark{width:36px;height:34px;fill:var(--fg);flex:none}
+.lp-head div{flex:1;min-width:0;display:flex;flex-direction:column}
+.lp-head .tag{align-self:flex-start;white-space:nowrap}
+.lp-head b{font:700 16px var(--sans);letter-spacing:-.02em}
+.lp-head span{font-size:12px;color:var(--mute)}
+.lp-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:9px;overflow:hidden;margin-bottom:12px}
+.lp-grid div{background:var(--bg);padding:8px 10px}
+.lp-grid span{display:block;font:500 9.5px var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--dim)}
+.lp-grid b{font:600 13px var(--mono)}
+.logo-pop p{margin:0 0 10px;font-size:13px;line-height:1.55;color:var(--fg2)}
+.lp-link{font:500 11.5px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--fg)}
+.lp-link:hover{text-decoration:underline;text-underline-offset:3px}
+.prog{position:absolute;left:0;bottom:-1px;height:1.5px;width:100%;background:var(--fg);transform-origin:0 50%;transform:scaleX(0);pointer-events:none}
+
+.mark-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:56px;align-items:center}
+@media (max-width:900px){.mark-grid{grid-template-columns:minmax(0,1fr)}}
+.stage{position:relative;aspect-ratio:1/1;max-width:560px;width:100%;border:1px solid var(--line2);border-radius:18px;background:radial-gradient(ellipse at 50% 40%,#151515,#0b0b0b 70%);overflow:hidden;perspective:900px;justify-self:center}
+#wind{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.bird-tilt{position:absolute;inset:9%;transform-style:preserve-3d;transition:transform .25s ease-out}
+.bird{width:100%;height:100%;overflow:visible;animation:hover 4.5s ease-in-out infinite}
+@keyframes hover{50%{transform:translateY(-8px)}}
+.bird .halo{fill:none;stroke:#fff;stroke-opacity:.06;stroke-dasharray:2 6;animation:spin 60s linear infinite;transform-origin:100px 95px}
+@keyframes spin{to{transform:rotate(360deg)}}
+.bird .pt{cursor:pointer;outline:none}
+.bird .pt polygon,.bird .pt circle:not(.pupil){fill:#d9d9d9;stroke:#0b0b0b;stroke-width:1.2;transition:fill .2s,opacity .25s,filter .25s}
+.bird .pt .fe{fill:none;stroke:#0b0b0b;stroke-width:1.1;stroke-opacity:.35;stroke-linecap:round;stroke-linejoin:round}
+.bird .pt[data-part="eyes"] circle:not(.pupil){fill:#0b0b0b;stroke:#d9d9d9;stroke-width:.8}
+.bird .pupil{fill:var(--warn);transition:transform .08s linear}
+.bird.focus .pt{opacity:.28}
+.bird.focus .pt.on{opacity:1}
+.bird .pt.on polygon{fill:#fff;filter:drop-shadow(0 0 6px rgba(255,255,255,.45))}
+.bird .pt[data-part="eyes"].on circle:not(.pupil){stroke:#fff;filter:drop-shadow(0 0 4px rgba(255,181,71,.8))}
+.bird [data-part="lwing"],.bird [data-part="rwing"]{transform-box:fill-box;transition:transform .35s cubic-bezier(.3,1.6,.5,1)}
+.bird [data-part="lwing"]{transform-origin:100% 25%}.bird [data-part="rwing"]{transform-origin:0 25%}
+.bird [data-part="lwing"].on{transform:rotate(-7deg) translateX(-3px)}
+.bird [data-part="rwing"].on{transform:rotate(7deg) translateX(3px)}
+.bird [data-part="tail"]{transform-box:fill-box;transform-origin:50% 0;transition:transform .35s cubic-bezier(.3,1.6,.5,1)}
+.bird [data-part="tail"].on{transform:scale(1.12,1.08)}
+.hint{position:absolute;left:16px;bottom:14px;display:flex;align-items:center;gap:8px;font:500 10.5px var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--mute);transition:opacity .3s}
+.stage:hover .hint{opacity:0}
+.part-card{border:1px solid var(--line2);border-radius:12px;background:var(--bg2);padding:18px 20px;margin-bottom:12px;min-height:178px;transition:border-color .2s}
+.part-card.live{border-color:#3a3a3a}
+.part-card.swap{animation:fadeUp .3s}
+@keyframes fadeUp{from{opacity:.2;transform:translateY(4px)}}
+.pc-top{display:flex;align-items:baseline;gap:12px;margin-bottom:8px}
+.pc-n{font:500 11px var(--mono);color:var(--dim)}
+.pc-top b{font:700 22px/1.2 var(--sans);letter-spacing:-.03em}
+.part-card p{margin:0 0 14px;color:var(--fg2);font-size:14.5px;line-height:1.6;opacity:.9}
+.pc-m{display:flex;justify-content:space-between;align-items:baseline;border-top:1px solid var(--line);padding-top:12px}
+.pc-m span{font:500 10.5px var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--dim)}
+.pc-m b{font:600 18px var(--mono)}
+.part-list{display:flex;flex-wrap:wrap;gap:6px}
+.part-list button{border:1px solid var(--line2);background:none;border-radius:99px;padding:6px 12px;font:500 11px var(--mono);letter-spacing:.08em;color:var(--fg2);transition:.15s}
+.part-list button:hover,.part-list button.on{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+
+.hero-glow{position:absolute;width:620px;height:620px;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.07),transparent 60%);left:var(--gx,30%);top:var(--gy,40%);transform:translate(-50%,-50%);pointer-events:none;transition:left .3s ease-out,top .3s ease-out;z-index:0}
+.c-sp{position:absolute;left:0;right:0;bottom:0;width:100%;height:46px;pointer-events:none;opacity:.55}
+.c>*:not(.c-sp){position:relative}
+.g-top{display:flex;justify-content:space-between;align-items:center}
+.gi{width:38px;height:38px;border-radius:9px;border:1px solid var(--line2);display:grid;place-items:center;color:var(--fg);background:var(--bg);transition:transform .25s,background .25s,color .25s}
+.g{transition:background .25s}
+.g:hover{background:#141414}
+.g:hover .gi{transform:rotate(-6deg) scale(1.08);background:var(--fg);color:var(--bg)}
+.bigword-wrap{overflow:hidden;margin-bottom:28px}
+.bigword{font:700 clamp(64px,19vw,260px)/.8 var(--sans);letter-spacing:-.07em;text-align:center;color:transparent;-webkit-text-stroke:1px #2a2a2a;background:radial-gradient(260px circle at var(--mx,-30%) var(--my,50%),#f5f5f5,#f5f5f5 30%,transparent 70%);-webkit-background-clip:text;background-clip:text;user-select:none;padding-top:10px}
+.prow .spark{width:56px;height:18px;display:block}
+@media (max-width:620px){.prow .spark{display:none}}
 </style>
 
 <header class="nav">
   <div class="wrap">
-    <a class="logo" href="#top" aria-label="Kestrel home"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 3h4v7l7-7h5l-8 8 8 10h-5l-6-7.5L8 15v6H4z" fill="#f5f5f5"/></svg>KESTREL</a>
-    <nav class="links" aria-label="Primary"><a href="#markets">Markets</a><a href="#trade">Trade</a><a href="#earn">Earn</a><a href="#leaders">Leaderboard</a><a href="#guards">Safety</a><a href="#skew">Pricing</a><a href="#faq">Docs</a></nav>
+    <div class="logo-wrap"><a class="logo" href="#top" aria-label="Kestrel home" aria-describedby="logoPop"><svg class="mark" viewBox="0 0 200 190" aria-hidden="true"><g class="lw"><polygon points="88,62 60,57 32,60 6,70 22,82 14,88 36,92 30,100 56,100 88,92"/></g><g class="rw"><polygon points="112,62 140,57 168,60 194,70 178,82 186,88 164,92 170,100 144,100 112,92"/></g><polygon points="92,126 100,136 108,126 117,170 107,164 100,178 93,164 83,170"/><polygon points="94,50 106,50 113,82 108,126 100,136 92,126 87,82"/><polygon points="100,10 112,30 106,48 94,48 88,30"/><circle cx="95" cy="30" r="3.5" fill="#0a0a0a"/><circle cx="105" cy="30" r="3.5" fill="#0a0a0a"/></svg><span>KESTREL</span></a>
+      <div class="logo-pop" id="logoPop" role="tooltip">
+        <div class="lp-head"><svg class="mark" viewBox="0 0 200 190" aria-hidden="true"><g class="lw"><polygon points="88,62 60,57 32,60 6,70 22,82 14,88 36,92 30,100 56,100 88,92"/></g><g class="rw"><polygon points="112,62 140,57 168,60 194,70 178,82 186,88 164,92 170,100 144,100 112,92"/></g><polygon points="92,126 100,136 108,126 117,170 107,164 100,178 93,164 83,170"/><polygon points="94,50 106,50 113,82 108,126 100,136 92,126 87,82"/><polygon points="100,10 112,30 106,48 94,48 88,30"/><circle cx="95" cy="30" r="3.5" fill="#0a0a0a"/><circle cx="105" cy="30" r="3.5" fill="#0a0a0a"/></svg><div><b>Kestrel</b><span>Perps that hold steady in any wind</span></div><span class="tag">v0.4 · DEMO</span></div>
+        <div class="lp-grid"><div><span>Block</span><b id="lpB">-</b></div><div><span>Markets</span><b id="lpM">-</b></div><div><span>Vault NAV</span><b id="lpV">-</b></div><div><span>Session</span><b id="lpT">0:00</b></div></div>
+        <p>Named after the falcon that hangs motionless in a headwind while it watches the ground. Prices here do the same: steady while the pool below moves.</p>
+        <a href="#mark" class="lp-link">Meet the mark →</a>
+      </div></div>
+    <nav class="links" aria-label="Primary"><a href="#mark">Mark</a><a href="#markets">Markets</a><a href="#trade">Trade</a><a href="#earn">Earn</a><a href="#leaders">Leaderboard</a><a href="#guards">Safety</a><a href="#skew">Pricing</a><a href="#faq">Docs</a></nav>
     <button class="search" id="openSearch" type="button" aria-label="Search markets"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><span>Search markets</span><kbd>⌘K</kbd></button>
     <span class="sp"></span>
     <div class="chain"><span class="ldot"></span><span>BLOCK <b id="blk">-</b></span><span>ETH <b id="ethpx">-</b></span><span>NYSE <b id="nyse">-</b></span></div>
     <button class="btn-w" id="connect" type="button">Connect</button>
     <button class="burger" id="burger" type="button" aria-label="Menu" aria-expanded="false"><i></i><i></i></button>
   </div>
+  <div class="prog" id="prog"></div>
 </header>
-<div class="drawer" id="drawer" hidden><a href="#markets">Markets</a><a href="#trade">Trade</a><a href="#earn">Earn</a><a href="#leaders">Leaderboard</a><a href="#guards">Safety</a><a href="#skew">Pricing</a><a href="#faq">Docs</a></div>
+<div class="drawer" id="drawer" hidden><a href="#mark">Mark</a><a href="#markets">Markets</a><a href="#trade">Trade</a><a href="#earn">Earn</a><a href="#leaders">Leaderboard</a><a href="#guards">Safety</a><a href="#skew">Pricing</a><a href="#faq">Docs</a></div>
 
 <main id="top">
-<div class="hero">
+<div class="hero" id="hero">
+  <div class="hero-glow" aria-hidden="true"></div>
   <div class="wrap hero-grid">
     <div>
       <div class="pill rise"><span class="ldot"></span>Perps on any pool</div>
@@ -393,6 +485,35 @@ img.coin{display:block;border-radius:50%;flex:none;background:#1a1a1a;box-shadow
   <div class="stat"><div class="k">24h volume</div><div class="v" id="s6">-</div><div class="d" id="s6d">-</div></div>
 </div></div></div>
 
+<section class="s" id="mark"><div class="wrap mark-grid">
+  <div class="stage" id="stage">
+    <canvas id="wind" aria-hidden="true"></canvas>
+    <div class="bird-tilt" id="birdTilt"><svg class="bird" id="bird" viewBox="0 0 200 190" role="img" aria-label="Kestrel emblem. Hover or tab through its parts.">
+      <defs><radialGradient id="bg1" cx="50%" cy="40%" r="60%"><stop offset="0" stop-color="#fff" stop-opacity=".09"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient></defs>
+      <circle cx="100" cy="95" r="92" fill="url(#bg1)"/>
+      <circle class="halo" cx="100" cy="95" r="88"/>
+      <g class="pt" data-part="lwing"><polygon points="88,62 60,57 32,60 6,70 22,82 14,88 36,92 30,100 56,100 88,92"/><path class="fe" d="M30 66l14 22M50 62l10 30M70 60l6 34"/></g>
+<g class="pt" data-part="rwing"><polygon points="112,62 140,57 168,60 194,70 178,82 186,88 164,92 170,100 144,100 112,92"/><path class="fe" d="M170 66l-14 22M150 62l-10 30M130 60l-6 34"/></g>
+<g class="pt" data-part="tail"><polygon points="92,126 100,136 108,126 117,170 107,164 100,178 93,164 83,170"/><path class="fe" d="M100 140v30M94 140l-6 24M106 140l6 24"/></g>
+<g class="pt" data-part="body"><polygon points="94,50 106,50 113,82 108,126 100,136 92,126 87,82"/><path class="fe" d="M96 70l4 5 4-5M95 88l5 5 5-5M96 106l4 5 4-5"/></g>
+<g class="pt" data-part="head"><polygon points="100,10 112,30 106,48 94,48 88,30"/><path class="fe" d="M94 36l-1.5 8M106 36l1.5 8"/></g>
+<g class="pt" data-part="eyes"><circle cx="95" cy="30" r="4.2"/><circle cx="105" cy="30" r="4.2"/><circle class="pupil" cx="95" cy="30" r="1.9"/><circle class="pupil" cx="105" cy="30" r="1.9"/></g>
+    </svg></div>
+    <div class="hint" id="hint"><span class="ldot"></span>Hover the kestrel</div>
+  </div>
+  <div class="mark-info">
+    <p class="eyebrow">The mark</p>
+    <h2 class="h2">Built like a bird <span class="hl">that never drifts.</span></h2>
+    <p class="lede">A kestrel holds one spot in the sky by reading the wind and correcting all the time. Every part of the mark stands for a part of the engine. Point at one to see it live.</p>
+    <div class="part-card" id="partCard" aria-live="polite">
+      <div class="pc-top"><span class="pc-n" id="pcN">00</span><b id="pcT">Pick a part</b></div>
+      <p id="pcD">Wings, tail, head and eyes each map to a rule the engine runs on every trade.</p>
+      <div class="pc-m"><span id="pcK">Live</span><b id="pcV">-</b></div>
+    </div>
+    <div class="part-list" id="partList"></div>
+  </div>
+</div></section>
+
 <section class="s" id="markets"><div class="wrap">
   <p class="eyebrow"><span class="ldot"></span>Listed now</p>
   <h2 class="h2">Thin pools, <span class="hl">thin limits.</span></h2>
@@ -410,12 +531,12 @@ img.coin{display:block;border-radius:50%;flex:none;background:#1a1a1a;box-shadow
   <h2 class="h2">Moving the pool <span class="hl">won't move your payout.</span></h2>
   <p class="lede">A small coin is only safe to list if a whale pushing its pool can't push money out of the vault. Every coin price runs through six checks before it touches a position.</p>
   <div class="guards">
-    <div class="g"><div class="n">01</div><h3>Worse-side fills</h3><p>Opening a long fills at the higher of spot and the 10-minute average. Opening a short fills at the lower. A spike never lands in the trader's favor.</p></div>
-    <div class="g"><div class="n">02</div><h3>Drift pause</h3><p>When spot runs 10% or more away from its average, new positions on that coin wait. Closing and adding margin keep working.</p></div>
-    <div class="g"><div class="n">03</div><h3>Per-side ceilings</h3><p>Long interest is capped by what it costs to push the pool up. Short interest is capped by what it costs to push it down. Lopsided pools get lopsided limits.</p></div>
-    <div class="g"><div class="n">04</div><h3>Cooling-off</h3><p>A new listing collects an hour of price history before it accepts its first position.</p></div>
-    <div class="g"><div class="n">05</div><h3>Win ceiling</h3><p>One coin position can win at most 3× its entry size. That limits what a slow, deliberate pump can take from the vault.</p></div>
-    <div class="g"><div class="n">06</div><h3>Average-price margin</h3><p>Margin and liquidation checks read the smoothed price, so a single candle can't wipe out a healthy position.</p></div>
+    <div class="g"><div class="g-top"><span class="gi"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 17l6-6 4 4 6-8"/><path d="M4 7h4M4 7v4"/></svg></span><div class="n">01</div></div><h3>Worse-side fills</h3><p>Opening a long fills at the higher of spot and the 10-minute average. Opening a short fills at the lower. A spike never lands in the trader's favor.</p></div>
+    <div class="g"><div class="g-top"><span class="gi"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg></span><div class="n">02</div></div><h3>Drift pause</h3><p>When spot runs 10% or more away from its average, new positions on that coin wait. Closing and adding margin keep working.</p></div>
+    <div class="g"><div class="g-top"><span class="gi"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 20V9M17 20V4"/><path d="M4 12l3-3 3 3M14 7l3-3 3 3"/></svg></span><div class="n">03</div></div><h3>Per-side ceilings</h3><p>Long interest is capped by what it costs to push the pool up. Short interest is capped by what it costs to push it down. Lopsided pools get lopsided limits.</p></div>
+    <div class="g"><div class="g-top"><span class="gi"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l3 2M9 2h6"/></svg></span><div class="n">04</div></div><h3>Cooling-off</h3><p>A new listing collects an hour of price history before it accepts its first position.</p></div>
+    <div class="g"><div class="g-top"><span class="gi"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20h16M7 20V10M12 20V6M17 20V13"/><path d="M3 6h18" stroke-dasharray="2 2"/></svg></span><div class="n">05</div></div><h3>Win ceiling</h3><p>One coin position can win at most 3× its entry size. That limits what a slow, deliberate pump can take from the vault.</p></div>
+    <div class="g"><div class="g-top"><span class="gi"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 15c3-8 5 4 8-3s5 6 10-4"/><path d="M3 12h18" stroke-dasharray="3 3"/></svg></span><div class="n">06</div></div><h3>Average-price margin</h3><p>Margin and liquidation checks read the smoothed price, so a single candle can't wipe out a healthy position.</p></div>
   </div>
 </div></section>
 
@@ -516,7 +637,7 @@ img.coin{display:block;border-radius:50%;flex:none;background:#1a1a1a;box-shadow
 </div></section>
 </main>
 
-<footer><div class="wrap"><span>© 2026 Kestrel · MIT licensed demo · not a financial product</span><nav aria-label="Footer"><a href="#markets">Markets</a><a href="#trade">Trade</a><a href="#earn">Earn</a><a href="#leaders">Leaderboard</a><a href="#faq">Docs</a></nav></div></footer>
+<footer><div class="wrap bigword-wrap"><div class="bigword" id="bigword" aria-hidden="true">KESTREL</div></div><div class="wrap"><span>© 2026 Kestrel · MIT licensed demo · not a financial product</span><nav aria-label="Footer"><a href="#markets">Markets</a><a href="#trade">Trade</a><a href="#earn">Earn</a><a href="#leaders">Leaderboard</a><a href="#faq">Docs</a></nav></div></footer>
 
 <div class="ov" id="coinDlg" hidden><div class="dlg" role="dialog" aria-modal="true" aria-labelledby="cdT"><button type="button" class="x" data-close aria-label="Close">×</button><div class="dlg-b">
   <div class="cd-head"><img class="coin" id="cdIco" width="52" height="52" alt=""><div class="grow"><h3 id="cdT">-</h3><div class="nm" id="cdN">-</div></div></div>
@@ -772,9 +893,14 @@ img.coin{display:block;border-radius:50%;flex:none;background:#1a1a1a;box-shadow
 
   // ---------- small-cap cards ----------
   let sortMode = "small", shown = 15;
-  const card = m => `<article class="c" data-sym="${m.sym}" data-open="${m.sym}" tabindex="0" aria-label="${m.sym} details"><div class="c-top">${coinIcon(m, 34)}<div><div class="tk">${m.sym}</div><div class="nm">${esc(m.name)}</div></div>${starBtn(m)}<span class="c-lev">${m.maxLev}×</span></div>
+  const card = m => `<article class="c" data-sym="${m.sym}" data-open="${m.sym}" tabindex="0" aria-label="${m.sym} details"><svg class="c-sp" viewBox="0 0 100 30" preserveAspectRatio="none" aria-hidden="true">${spark(m)}</svg><div class="c-top">${coinIcon(m, 34)}<div><div class="tk">${m.sym}</div><div class="nm">${esc(m.name)}</div></div>${starBtn(m)}<span class="c-lev">${m.maxLev}×</span></div>
     <div class="c-px"><span class="p">${pxHtml(m.price)}</span><small class="chg ${chg(m) >= 0 ? "up" : "down"}">${pct(chg(m), 1)}</small></div>
     <div class="c-bot"><div class="kv"><span>MCAP</span><span>${k(m.mcap)}</span></div><div class="kv"><span>10% MOVE</span><span>${k(m.move)}</span></div>${lsBtns(m)}</div></article>`;
+  const spark = m => {
+    const d = m.hist.slice(-48), lo = Math.min(...d), hi = Math.max(...d), r = hi - lo || 1, up = d[d.length - 1] >= d[0], col = up ? "43,227,143" : "255,77,94";
+    const pts = d.map((v, i) => `${(i / (d.length - 1) * 100).toFixed(1)},${(28 - (v - lo) / r * 22).toFixed(1)}`);
+    return `<path d="M0,30 L${pts.join(" L")} L100,30Z" fill="rgba(${col},.10)"/><path d="M${pts.join(" L")}" fill="none" stroke="rgba(${col},.55)" stroke-width="1" vector-effect="non-scaling-stroke"/>`;
+  };
   const cardList = () => {
     const l = coins();
     if (sortMode === "watch") return l.filter(m => watched(m.sym));
@@ -791,7 +917,7 @@ img.coin{display:block;border-radius:50%;flex:none;background:#1a1a1a;box-shadow
   const tickCards = () => {
     for (const c of $$("#cards .c")) {
       const m = bySym(c.dataset.sym), ch = c.querySelector(".chg");
-      c.querySelector(".p").innerHTML = pxHtml(m.price); flash(c, m);
+      c.querySelector(".p").innerHTML = pxHtml(m.price); flash(c, m); c.querySelector(".c-sp").innerHTML = spark(m);
       ch.textContent = pct(chg(m), 1); ch.className = "chg " + (chg(m) >= 0 ? "up" : "down");
     }
   };
@@ -1046,11 +1172,104 @@ img.coin{display:block;border-radius:50%;flex:none;background:#1a1a1a;box-shadow
     for (const p of [...st.pos]) { const m = bySym(p.sym); if ((p.side === "L" && m.price <= p.liq) || (p.side === "S" && m.price >= p.liq)) closePos(p.id, true); }
     renderNav(); tickPools(); tickCards(); renderStats(); renderHead(); renderTicket(); renderPos(); drawChart();
     if (cdSym && !$("#coinDlg").hidden) renderCoin();
+    renderLogoPop(); renderPart();
     if (++n % 2 === 0) pushEv(fillEv());
     if (n % 3 === 0) renderSkew();
   };
 
-  renderNav(); renderPools(); renderStats(); renderCards(); renderSkew(); setMarket("ETH"); renderPos(); renderVault(); renderConn(); renderLb();
+  // ---------- the mark: interactive kestrel emblem ----------
+  const avgOf = m => { const h = m.hist.slice(-30); return h.reduce((a, b) => a + b, 0) / h.length; };
+  const PARTS = {
+    head:  { n: "01", t: "Pool-read prices", d: "Every coin price is read straight from its own pool, then smoothed over ten minutes before it touches a position.", k: "ETH mark price", v: () => px(bySym("ETH").price) },
+    eyes:  { n: "02", t: "Drift watch", d: "Two eyes on two prices. When spot strays more than 10% from its average, new positions on that coin pause until it settles.", k: "Coins drifting > 3% now", v: () => String(coins().filter(m => Math.abs(m.price / avgOf(m) - 1) > .03).length) },
+    lwing: { n: "03", t: "Long ceiling", d: "Total long interest on a coin can't exceed what it costs to push its pool up. Thin pools get short wings.", k: "Long open interest", v: () => k(coins().reduce((a, m) => a + m.oiL, 0)) },
+    rwing: { n: "04", t: "Short ceiling", d: "The other wing mirrors it: shorts are capped by what it costs to push the pool down, so a one-sided pool stays one-sided.", k: "Short open interest", v: () => k(coins().reduce((a, m) => a + m.oiS, 0)) },
+    body:  { n: "05", t: "The vault", d: "The body carries the weight. The vault takes the other side of every trade and is paid fees for it.", k: "Vault NAV", v: () => usd(vaultNav) },
+    tail:  { n: "06", t: "Skew steering", d: "The tail keeps the bird level. Trades that tilt the book pay up to 6 bps; trades that level it pay 2.5.", k: "ETH book skew", v: () => { const m = bySym("ETH"), d = m.oiL - m.oiS; return (d >= 0 ? "+" : "-") + k(Math.abs(d)); } },
+  };
+  const bird = $("#bird"), stage = $("#stage"), tilt = $("#birdTilt");
+  if (matchMedia("(hover: none)").matches) $("#hint").lastChild.textContent = "Tap the kestrel";
+  let curPart = null, locked = false;
+  $$("#bird .pt").forEach(g => { g.setAttribute("tabindex", "0"); g.setAttribute("role", "button"); g.setAttribute("aria-label", PARTS[g.dataset.part].t); });
+  $("#partList").innerHTML = Object.entries(PARTS).map(([key, p]) => `<button type="button" data-part="${key}">${p.n} ${p.t}</button>`).join("");
+  const renderPart = () => {
+    const p = PARTS[curPart]; if (!p) return;
+    $("#pcV").textContent = p.v();
+  };
+  const setPart = (key, lock) => {
+    if (lock !== undefined) locked = lock;
+    curPart = key; const card = $("#partCard");
+    bird.classList.toggle("focus", !!key);
+    $$("#bird .pt").forEach(g => g.classList.toggle("on", g.dataset.part === key));
+    $$("#partList button").forEach(b => b.classList.toggle("on", b.dataset.part === key));
+    card.classList.toggle("live", !!key);
+    if (!key) { $("#pcN").textContent = "00"; $("#pcT").textContent = "Pick a part"; $("#pcD").textContent = "Wings, tail, head and eyes each map to a rule the engine runs on every trade."; $("#pcK").textContent = "Live"; $("#pcV").textContent = "-"; return; }
+    const p = PARTS[key];
+    $("#pcN").textContent = p.n; $("#pcT").textContent = p.t; $("#pcD").textContent = p.d; $("#pcK").textContent = p.k;
+    card.classList.remove("swap"); void card.offsetWidth; card.classList.add("swap");
+    renderPart();
+  };
+  bird.addEventListener("pointerover", e => { const g = e.target.closest(".pt"); if (g && !locked && g.dataset.part !== curPart) setPart(g.dataset.part); });
+  bird.addEventListener("pointerleave", () => { if (!locked) setPart(null); });
+  bird.addEventListener("click", e => { ptrDown = false; const g = e.target.closest(".pt"); if (g) setPart(g.dataset.part, !(locked && curPart === g.dataset.part)); else setPart(null, false); });
+  let ptrDown = false;
+  bird.addEventListener("pointerdown", () => { ptrDown = true; });
+  bird.addEventListener("focusin", e => { const g = e.target.closest(".pt"); if (g && !ptrDown) setPart(g.dataset.part, true); ptrDown = false; });
+  bird.addEventListener("keydown", e => { const g = e.target.closest(".pt"); if (g && (e.key === "Enter" || e.key === " ")) { e.preventDefault(); setPart(g.dataset.part, true); } });
+  $("#partList").addEventListener("click", e => { const b = e.target.closest("button[data-part]"); if (b) setPart(b.dataset.part, true); });
+  $("#partList").addEventListener("pointerover", e => { const b = e.target.closest("button[data-part]"); if (b && !locked) setPart(b.dataset.part); });
+  $("#partList").addEventListener("pointerleave", () => { if (!locked) setPart(null); });
+  // tilt toward the cursor; the eyes follow it
+  const pupils = $$("#bird .pupil");
+  stage.addEventListener("pointermove", e => {
+    const r = stage.getBoundingClientRect(), x = (e.clientX - r.left) / r.width - .5, y = (e.clientY - r.top) / r.height - .5;
+    if (!RM) tilt.style.transform = `rotateY(${x * 18}deg) rotateX(${-y * 14}deg)`;
+    const br = bird.getBoundingClientRect(), s = 200 / br.width;
+    pupils.forEach(p => {
+      const cxp = br.left + (+p.getAttribute("cx")) / s, cyp = br.top + (+p.getAttribute("cy")) / (190 / br.height);
+      const dx = e.clientX - cxp, dy = e.clientY - cyp, d = Math.hypot(dx, dy) || 1, m = Math.min(1.8, d / 40);
+      p.style.transform = `translate(${dx / d * m}px, ${dy / d * m}px)`;
+    });
+  });
+  stage.addEventListener("pointerleave", () => { tilt.style.transform = ""; pupils.forEach(p => p.style.transform = ""); });
+
+  // wind streaks behind the bird
+  const wind = $("#wind"), wctx = wind.getContext("2d");
+  const streaks = Array.from({ length: 46 }, () => ({ x: Math.random(), y: Math.random(), l: .04 + Math.random() * .14, v: .0006 + Math.random() * .0016, a: .05 + Math.random() * .16 }));
+  let windOn = true, wLast = performance.now();
+  const drawWind = now => {
+    const dt = Math.min(now - wLast, 60); wLast = now;
+    const dpr = Math.min(devicePixelRatio || 1, 2), W = wind.clientWidth, H = wind.clientHeight;
+    if (W && H) {
+      if (wind.width !== Math.round(W * dpr)) { wind.width = Math.round(W * dpr); wind.height = Math.round(H * dpr); }
+      wctx.setTransform(dpr, 0, 0, dpr, 0, 0); wctx.clearRect(0, 0, W, H); wctx.lineCap = "round";
+      for (const s of streaks) {
+        if (!RM) { s.x += s.v * dt / 16; if (s.x - s.l > 1) { s.x = -Math.random() * .2; s.y = Math.random(); } }
+        const y = s.y * H + Math.sin((s.x * 6) + s.y * 20) * 6, g = wctx.createLinearGradient((s.x - s.l) * W, 0, s.x * W, 0);
+        g.addColorStop(0, "rgba(255,255,255,0)"); g.addColorStop(1, `rgba(255,255,255,${s.a})`);
+        wctx.strokeStyle = g; wctx.lineWidth = 1; wctx.beginPath(); wctx.moveTo((s.x - s.l) * W, y); wctx.lineTo(s.x * W, y); wctx.stroke();
+      }
+    }
+    if (windOn && !RM) requestAnimationFrame(drawWind);
+  };
+  if ("IntersectionObserver" in window) new IntersectionObserver(es => { const vis = es[0].isIntersecting; if (vis && !windOn) { windOn = true; wLast = performance.now(); requestAnimationFrame(drawWind); } windOn = vis; }).observe(stage);
+  requestAnimationFrame(drawWind);
+
+  // ---------- logo popover, scroll progress, hero glow, footer wordmark ----------
+  const t0 = Date.now();
+  const renderLogoPop = () => {
+    $("#lpB").textContent = block.toLocaleString("en-US"); $("#lpM").textContent = M.filter(m => m.listed).length;
+    $("#lpV").textContent = k(vaultNav); const sec = Math.floor((Date.now() - t0) / 1000); $("#lpT").textContent = Math.floor(sec / 60) + ":" + String(sec % 60).padStart(2, "0");
+  };
+  const onScroll = () => { const h = document.documentElement, max = h.scrollHeight - h.clientHeight; $("#prog").style.transform = `scaleX(${max > 0 ? h.scrollTop / max : 0})`; };
+  addEventListener("scroll", onScroll, { passive: true });
+  const hero = $("#hero"), glow = $(".hero-glow");
+  hero.addEventListener("pointermove", e => { const r = hero.getBoundingClientRect(); glow.style.setProperty("--gx", e.clientX - r.left + "px"); glow.style.setProperty("--gy", e.clientY - r.top + "px"); });
+  const bw = $("#bigword");
+  $("footer").addEventListener("pointermove", e => { const r = bw.getBoundingClientRect(); bw.style.setProperty("--mx", e.clientX - r.left + "px"); bw.style.setProperty("--my", e.clientY - r.top + "px"); });
+  $("footer").addEventListener("pointerleave", () => { bw.style.setProperty("--mx", "-30%"); });
+
+  renderNav(); renderLogoPop(); onScroll(); renderPools(); renderStats(); renderCards(); renderSkew(); setMarket("ETH"); renderPos(); renderVault(); renderConn(); renderLb();
   fillTape(); requestAnimationFrame(stepTape);
   if (document.fonts) document.fonts.ready.then(() => { drawChart(); renderSkew(); });
   setInterval(() => { if (!document.hidden) tick(); }, 2000);

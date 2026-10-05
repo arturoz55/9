@@ -2,6 +2,7 @@
 
 A paper-trading demo of a perpetual futures exchange: one static page, no build step, no wallet.
 
+- Original kestrel logo: nav mark flaps on hover and opens a live info card; large interactive emblem where each part of the bird explains part of the engine with live numbers
 - Original illustrated emblem for every coin and pixel avatars for traders, all generated in-page
 - Coin detail panel (chart, open interest, funding, copyable address), watchlist with stars, leaderboard with 24H/7D/30D
 - Hero with live "deepest pools" board, token-address checker and a scrolling feed of demo fills
