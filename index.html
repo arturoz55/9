@@ -213,7 +213,7 @@ input[type=range]::-moz-range-thumb{width:16px;height:16px;border-radius:50%;bac
 .fld label{display:flex;justify-content:space-between;font-size:13px;color:var(--mute);margin-bottom:6px}
 .inp{display:flex;align-items:center;border:1px solid var(--line2);border-radius:8px;padding:0 12px;background:var(--bg)}
 .inp:focus-within{border-color:#555}
-.inp input{flex:1;min-width:0;border:0;background:none;outline:0;padding:10px 0;font:500 15px var(--mono)}
+.inp input{flex:1;min-width:0;width:100%;border:0;background:none;outline:0;padding:10px 0;font:500 15px var(--mono)}
 .inp span{font:12px var(--mono);color:var(--dim)}
 .pct{display:flex;gap:5px;margin-top:6px}
 .pct button{flex:1;border:1px solid var(--line);background:none;border-radius:5px;padding:4px 0;font:11px var(--mono);color:var(--mute)}
@@ -429,6 +429,63 @@ img.coin{display:block;border-radius:50%;flex:none;background:#1a1a1a;box-shadow
 .bigword{font:700 clamp(64px,19vw,260px)/.8 var(--sans);letter-spacing:-.07em;text-align:center;color:transparent;-webkit-text-stroke:1px #2a2a2a;background:radial-gradient(260px circle at var(--mx,-30%) var(--my,50%),#f5f5f5,#f5f5f5 30%,transparent 70%);-webkit-background-clip:text;background-clip:text;user-select:none;padding-top:10px}
 .prow .spark{width:56px;height:18px;display:block}
 @media (max-width:620px){.prow .spark{display:none}}
+
+/* v5 */
+html.lock{overflow:hidden}
+.ls button{width:24px;height:24px}
+.ls button,.star,.xb,.tfs button{position:relative}
+.ls button::after,.star::after{content:"";position:absolute;inset:-6px}
+.star{padding:4px}
+.tfs{margin-left:auto;display:flex;gap:2px;border:1px solid var(--line2);border-radius:7px;padding:2px}
+.tfs button{border:0;background:none;border-radius:5px;padding:4px 9px;font:500 11px var(--mono);color:var(--mute)}
+.tfs button[aria-pressed="true"]{background:var(--fg);color:var(--bg)}
+.tpsl{border:1px solid var(--line);border-radius:8px}
+.tpsl summary{padding:10px 12px;font-size:13px;font-weight:500;justify-content:flex-start;gap:8px}
+.tpsl summary::after{margin-left:auto;font-size:16px}
+.tpsl summary .mute{font:11px var(--mono)}
+.tpsl[open]{padding-bottom:12px}
+.tpsl-g{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:8px;padding:0 12px}
+.tpsl .pct{padding:0 12px}
+.tpsl .inp input{font-size:13px;padding:8px 0}
+.tpsl .fld label{font-size:12px}
+.tpsl-cell{font-size:11.5px;line-height:1.35}
+.tpsl-cell .up,.tpsl-cell .down{display:block}
+.act{display:flex;gap:6px;justify-content:flex-end}
+.xb.sh:hover{border-color:var(--fg);color:var(--fg)}
+.pnl-card{position:relative;overflow:hidden;border:1px solid var(--line2);border-radius:14px;padding:22px;background:radial-gradient(circle at 85% 15%,rgba(255,255,255,.08),transparent 55%),linear-gradient(160deg,#151515,#0b0b0b);display:grid;gap:14px}
+.pnl-card .mark{position:absolute;right:-30px;bottom:-40px;width:220px;height:210px;fill:#fff;opacity:.05}
+.pnl-card .row{display:flex;align-items:center;gap:10px}
+.pnl-card .big{font:700 46px/1 var(--mono);letter-spacing:-.04em}
+.pnl-card .sub{display:flex;gap:22px;font:12px var(--mono);color:var(--mute)}
+.pnl-card .sub b{display:block;color:var(--fg);font-size:14px}
+.pnl-card .brand{display:flex;align-items:center;gap:8px;font:700 13px var(--sans);letter-spacing:.06em}
+.pnl-card .brand .mark{position:static;width:18px;height:17px;opacity:1}
+.alerts{border:1px solid var(--line);border-radius:10px;padding:10px}
+.al-row{display:flex;gap:8px;align-items:center}
+.al-l{display:flex;align-items:center;gap:6px;font-size:13px;color:var(--fg2);white-space:nowrap}
+.al-row .inp{flex:1;min-width:0}
+.al-row .inp input{padding:7px 0;font-size:13px}
+.al-row .ghost{padding:7px 12px}
+.al-list{display:flex;flex-wrap:wrap;gap:6px}
+.al-list:not(:empty){margin-top:8px}
+.al-chip{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line2);border-radius:99px;padding:3px 4px 3px 10px;font:11.5px var(--mono)}
+.al-chip button{border:0;background:var(--line2);border-radius:99px;width:18px;height:18px;font:12px/1 var(--mono);color:var(--fg)}
+.try{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin-top:4px;font:11px var(--mono);color:var(--dim)}
+.try button{border:1px dashed var(--line2);background:none;border-radius:99px;padding:4px 10px;font:11px var(--mono);color:var(--fg2)}
+.try button:hover{border-style:solid;color:var(--fg)}
+.keys{display:grid;gap:0;margin:0}
+.keys div{display:flex;justify-content:space-between;align-items:center;padding:9px 0;border-bottom:1px solid var(--line);font-size:14px}
+.keys div:last-child{border-bottom:0}
+.keys dd{margin:0;color:var(--fg2)}
+.keys kbd{margin-right:3px}
+.kbtn{background:none;border:0;padding:0;font:inherit;color:var(--dim);display:inline-flex;gap:6px;align-items:center}
+.kbtn:hover{color:var(--fg)}
+.sh-text{width:100%;min-height:62px;resize:none;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--fg2);font:12px/1.5 var(--mono);padding:10px}
+.totop{position:fixed;right:18px;bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:45;width:42px;height:42px;border-radius:50%;border:1px solid var(--line2);background:rgba(15,15,15,.9);color:var(--fg);display:grid;place-items:center;backdrop-filter:blur(8px);animation:pop .25s both;transition:background .15s}
+.totop:hover{background:var(--fg);color:var(--bg)}
+#confetti{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:80}
+.hit{animation:hit .9s}
+@keyframes hit{0%{background:rgba(255,181,71,.22)}}
 </style>
 
 <header class="nav">
@@ -462,6 +519,7 @@ img.coin{display:block;border-radius:50%;flex:none;background:#1a1a1a;box-shadow
       <div class="rise">
         <label class="paste" for="addr"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M10 14a5 5 0 0 0 7 0l3-3a5 5 0 0 0-7-7l-1 1"/><path d="M14 10a5 5 0 0 0-7 0l-3 3a5 5 0 0 0 7 7l1-1"/></svg><input id="addr" placeholder="Paste a token address (0x…)" autocomplete="off" spellcheck="false"></label>
         <div class="paste-res" id="addrRes" role="status"></div>
+        <div class="try"><span>Try</span><button type="button" data-try="HERON">HERON's address</button><button type="button" data-try="new">A new token</button><button type="button" data-try="bad">A typo</button></div>
         <p class="fine">Coins list from a $20K pool at 2–5×. Majors and US stocks go to 20×.</p>
         <div class="ulinks"><a href="#markets">See all markets</a><i>·</i><a href="#trade">Open the terminal</a><i>·</i><a href="#guards">How limits work</a></div>
       </div>
@@ -576,6 +634,8 @@ img.coin{display:block;border-radius:50%;flex:none;background:#1a1a1a;box-shadow
         <div class="kv2"><span>24h</span><span id="tChg">-</span></div>
         <div class="kv2"><span>Max lev</span><span id="tMax">-</span></div>
         <div class="kv2"><span>10% move</span><span id="tMove">-</span></div>
+        <div class="kv2"><span>Next funding</span><span id="tFund">-</span></div>
+        <div class="tfs" role="group" aria-label="Chart range"><button type="button" data-tf="30" aria-pressed="false">1M</button><button type="button" data-tf="150" aria-pressed="true">5M</button><button type="button" data-tf="300" aria-pressed="false">10M</button></div>
       </div>
       <div class="cbox"><canvas id="chart" aria-label="Price chart"></canvas><div class="tip" id="tip"></div></div>
     </div>
@@ -585,13 +645,18 @@ img.coin{display:block;border-radius:50%;flex:none;background:#1a1a1a;box-shadow
       <div class="fld"><label for="mg"><span>Margin</span><span>USD</span></label><div class="inp"><input id="mg" inputmode="decimal" autocomplete="off" value="100"><span>USD</span></div>
         <div class="pct"><button type="button" data-p=".1">10%</button><button type="button" data-p=".25">25%</button><button type="button" data-p=".5">50%</button><button type="button" data-p="1">Max</button></div></div>
       <div class="fld"><label for="lv"><span>Leverage</span><span class="mono" id="lvv" style="color:var(--fg)">2×</span></label><input type="range" id="lv" min="1" max="5" step="1" value="2"><div class="levp" id="levp"></div></div>
+      <details class="tpsl" id="tpsl"><summary>Take profit / Stop loss <span class="mute" id="tpslHint">optional</span></summary>
+        <div class="tpsl-g"><div class="fld"><label for="tp"><span>Take profit</span><span class="up" id="tpPct"></span></label><div class="inp"><input id="tp" inputmode="decimal" autocomplete="off" placeholder="Price"><span>PX</span></div></div>
+        <div class="fld"><label for="sl"><span>Stop loss</span><span class="down" id="slPct"></span></label><div class="inp"><input id="sl" inputmode="decimal" autocomplete="off" placeholder="Price"><span>PX</span></div></div></div>
+        <div class="pct" id="tpslQuick"><button type="button" data-tp="10">TP +10%</button><button type="button" data-tp="25">TP +25%</button><button type="button" data-sl="5">SL −5%</button><button type="button" data-clr>Clear</button></div>
+      </details>
       <dl class="sum"><div><dt>Size</dt><dd id="qS">-</dd></div><div><dt>Fill (est.)</dt><dd id="qF">-</dd></div><div><dt>Premium</dt><dd id="qP">-</dd></div><div><dt>Liquidation</dt><dd id="qL">-</dd></div><div><dt>Fee</dt><dd id="qE">-</dd></div></dl>
       <div class="err" id="err" role="status"></div>
       <button class="go L" id="go" type="submit">Long</button>
     </form>
     <div class="box pos">
       <div class="ph"><span>Positions</span><span id="upnl"></span></div>
-      <div class="tw"><table><thead><tr><th>Market</th><th>Size</th><th>Entry</th><th>Mark</th><th>Liq.</th><th>Margin</th><th>PnL</th><th></th></tr></thead><tbody id="pos"></tbody></table></div>
+      <div class="tw"><table><thead><tr><th>Market</th><th>Size</th><th>Entry</th><th>Mark</th><th>Liq.</th><th>TP / SL</th><th>Margin</th><th>PnL</th><th></th></tr></thead><tbody id="pos"></tbody></table></div>
     </div>
   </div>
 </div></section>
@@ -637,7 +702,7 @@ img.coin{display:block;border-radius:50%;flex:none;background:#1a1a1a;box-shadow
 </div></section>
 </main>
 
-<footer><div class="wrap bigword-wrap"><div class="bigword" id="bigword" aria-hidden="true">KESTREL</div></div><div class="wrap"><span>© 2026 Kestrel · MIT licensed demo · not a financial product</span><nav aria-label="Footer"><a href="#markets">Markets</a><a href="#trade">Trade</a><a href="#earn">Earn</a><a href="#leaders">Leaderboard</a><a href="#faq">Docs</a></nav></div></footer>
+<footer><div class="wrap bigword-wrap"><div class="bigword" id="bigword" aria-hidden="true">KESTREL</div></div><div class="wrap"><span>© 2026 Kestrel · MIT licensed demo · not a financial product · <button type="button" class="kbtn" id="keysBtn">Shortcuts <kbd>?</kbd></button></span><nav aria-label="Footer"><a href="#markets">Markets</a><a href="#trade">Trade</a><a href="#earn">Earn</a><a href="#leaders">Leaderboard</a><a href="#faq">Docs</a></nav></div></footer>
 
 <div class="ov" id="coinDlg" hidden><div class="dlg" role="dialog" aria-modal="true" aria-labelledby="cdT"><button type="button" class="x" data-close aria-label="Close">×</button><div class="dlg-b">
   <div class="cd-head"><img class="coin" id="cdIco" width="52" height="52" alt=""><div class="grow"><h3 id="cdT">-</h3><div class="nm" id="cdN">-</div></div></div>
@@ -645,10 +710,23 @@ img.coin{display:block;border-radius:50%;flex:none;background:#1a1a1a;box-shadow
   <canvas class="cd-chart" id="cdChart" aria-label="Recent price"></canvas>
   <div class="cd-grid"><div><span>Mcap</span><b id="cdM">-</b></div><div><span>10% move</span><b id="cdV">-</b></div><div><span>Max lev</span><b id="cdL">-</b></div><div><span>Long OI</span><b id="cdOL" class="up">-</b></div><div><span>Short OI</span><b id="cdOS" class="down">-</b></div><div><span>Funding / 1h</span><b id="cdF">-</b></div></div>
   <div class="addrrow"><code id="cdA">-</code><button type="button" id="cdCopy">Copy</button></div>
+  <div class="alerts"><div class="al-row"><label for="alP" class="al-l"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.9 1.9 0 0 0 3.4 0"/></svg>Price alert</label><div class="inp"><input id="alP" inputmode="decimal" autocomplete="off" placeholder="Alert price"></div><button type="button" class="ghost" id="alSet">Set</button></div><div class="al-list" id="alList"></div></div>
   <div class="cd-act"><button type="button" class="go L" id="cdLong">Long</button><button type="button" class="go S" id="cdShort">Short</button></div>
 </div></div></div>
-<div class="ov" id="srch" hidden><div class="dlg" role="dialog" aria-modal="true" aria-label="Search markets"><div class="dlg-in"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input id="sq" placeholder="Search by ticker or name" autocomplete="off"><kbd>ESC</kbd></div><div class="res" id="sres"></div></div></div>
+<div class="ov" id="srch" hidden><div class="dlg" role="dialog" aria-modal="true" aria-label="Search markets"><div class="dlg-in"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input id="sq" placeholder="Search by ticker or name" autocomplete="off" aria-label="Search markets"><kbd>ESC</kbd></div><div class="res" id="sres"></div></div></div>
 <div class="ov" id="conn" hidden><div class="dlg" role="dialog" aria-modal="true" aria-labelledby="connT"><div class="dlg-b"><h3 id="connT">Connect a paper wallet</h3><p>Kestrel runs on a simulated network. This creates a demo wallet in your browser with $10,000 of paper USD. Nothing is signed and no real wallet is asked for.</p><div style="display:flex;gap:8px;justify-content:flex-end"><button class="ghost" type="button" id="connX">Cancel</button><button class="btn-w" type="button" id="connY">Create paper wallet</button></div></div></div></div>
+<div class="ov" id="shareDlg" hidden><div class="dlg" role="dialog" aria-modal="true" aria-labelledby="shT"><button type="button" class="x" data-close aria-label="Close">×</button><div class="dlg-b">
+  <h3 id="shT">Share this trade</h3>
+  <div class="pnl-card" id="pnlCard"></div>
+  <label for="shTxt" class="mute" style="font-size:12px">Summary text</label><textarea class="sh-text" id="shTxt" readonly></textarea>
+  <div style="display:flex;gap:8px;justify-content:flex-end"><button class="ghost" type="button" data-close>Done</button><button class="btn-w" type="button" id="shCopy">Copy summary</button></div>
+</div></div></div>
+<div class="ov" id="keysDlg" hidden><div class="dlg" role="dialog" aria-modal="true" aria-labelledby="kT"><button type="button" class="x" data-close aria-label="Close">×</button><div class="dlg-b">
+  <h3 id="kT">Keyboard shortcuts</h3>
+  <dl class="keys"><div><dt><kbd>/</kbd> or <kbd>⌘</kbd><kbd>K</kbd></dt><dd>Search markets</dd></div><div><dt><kbd>L</kbd></dt><dd>Switch ticket to long</dd></div><div><dt><kbd>S</kbd></dt><dd>Switch ticket to short</dd></div><div><dt><kbd>T</kbd></dt><dd>Jump to the terminal</dd></div><div><dt><kbd>M</kbd></dt><dd>Jump to markets</dd></div><div><dt><kbd>W</kbd></dt><dd>Watch the coin that's open</dd></div><div><dt><kbd>Esc</kbd></dt><dd>Close any panel</dd></div><div><dt><kbd>?</kbd></dt><dd>Show this list</dd></div></dl>
+</div></div></div>
+<button type="button" class="totop" id="toTop" aria-label="Back to top" hidden><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
+<canvas id="confetti" aria-hidden="true"></canvas>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
 <script>
@@ -787,15 +865,17 @@ img.coin{display:block;border-radius:50%;flex:none;background:#1a1a1a;box-shadow
   const short = a => a.slice(0, 4) + "…" + a.slice(-4);
 
   let tt; const toast = s => { const t = $("#toast"); t.textContent = s; t.classList.add("show"); clearTimeout(tt); tt = setTimeout(() => t.classList.remove("show"), 2600); };
-  const copy = (text, label) => {
+  const selectEl = el => { if (!el) return; if (el.select) { el.focus(); el.select(); return; } const r = document.createRange(); r.selectNodeContents(el); const sel = getSelection(); sel.removeAllRanges(); sel.addRange(r); };
+  const copy = (text, label, el) => {
     const ok = () => toast(label + " copied");
-    try { navigator.clipboard.writeText(text).then(ok, () => toast("Select the text and copy it manually")); } catch { toast("Select the text and copy it manually"); }
+    const fail = () => { selectEl(el); toast(el ? "Copy is blocked here. The text is selected; press Ctrl+C or ⌘C." : "Copy is blocked here. Select the text and copy it manually."); };
+    try { navigator.clipboard.writeText(text).then(ok, fail); } catch { fail(); }
   };
 
   // ---------- persisted demo state ----------
   const START = 10000, KEY = "kestrel-paper-v3";
-  let st = { bal: START, pos: [], id: 1, wallet: 0, watch: ["TIDE", "HERON"], realized: 0, closed: 0, wins: 0 };
-  try { const s = JSON.parse(localStorage.getItem(KEY) || "null"); if (s && typeof s.bal === "number" && Array.isArray(s.pos)) st = { ...st, ...s, pos: s.pos.filter(p => bySym(p.sym)), watch: Array.isArray(s.watch) ? s.watch.filter(bySym) : st.watch }; } catch {}
+  let st = { bal: START, pos: [], id: 1, wallet: 0, watch: ["TIDE", "HERON"], realized: 0, closed: 0, wins: 0, best: null, alerts: [] };
+  try { const s = JSON.parse(localStorage.getItem(KEY) || "null"); if (s && typeof s.bal === "number" && Array.isArray(s.pos)) st = { ...st, ...s, pos: s.pos.filter(p => bySym(p.sym)), watch: Array.isArray(s.watch) ? s.watch.filter(bySym) : st.watch, alerts: Array.isArray(s.alerts) ? s.alerts.filter(a => bySym(a.sym)) : [] }; } catch {}
   for (const p of st.pos) { const m = bySym(p.sym); if (p.side === "L") m.oiL += p.size; else m.oiS += p.size; }
   const save = () => { try { localStorage.setItem(KEY, JSON.stringify(st)); } catch {} };
   const watched = sym => st.watch.includes(sym);
@@ -937,8 +1017,8 @@ img.coin{display:block;border-radius:50%;flex:none;background:#1a1a1a;box-shadow
 
   // ---------- dialogs (focus trap + restore) ----------
   let opener = null;
-  const openDlg = (id, from) => { closeOv(true); opener = from || document.activeElement; $(id).hidden = false; };
-  const closeOv = keepOpener => { $$(".ov").forEach(o => o.hidden = true); if (!keepOpener && opener && opener.focus) { opener.focus({ preventScroll: true }); opener = null; } };
+  const openDlg = (id, from) => { closeOv(true); opener = from || document.activeElement; $(id).hidden = false; document.documentElement.classList.add("lock"); };
+  const closeOv = keepOpener => { $$(".ov").forEach(o => o.hidden = true); document.documentElement.classList.remove("lock"); if (!keepOpener && opener && opener.focus) { opener.focus({ preventScroll: true }); opener = null; } };
   $$(".ov").forEach(o => o.addEventListener("click", e => { if (e.target === o || e.target.closest("[data-close]")) closeOv(); }));
   document.addEventListener("keydown", e => {
     const ov = $$(".ov").find(o => !o.hidden); if (!ov || e.key !== "Tab") return;
@@ -971,9 +1051,9 @@ img.coin{display:block;border-radius:50%;flex:none;background:#1a1a1a;box-shadow
     $("#cdM").textContent = m.major ? "Oracle" : k(m.mcap); $("#cdV").textContent = k(m.move); $("#cdL").textContent = m.maxLev + "×";
     $("#cdA").textContent = m.addr; $("#cdLong").textContent = "Long " + m.sym; $("#cdShort").textContent = "Short " + m.sym; $("#cdShort").disabled = !m.shortOk;
     $("#cdShort").title = m.shortOk ? "" : "Short side is full";
-    openDlg("#coinDlg", from); renderCoin(); $("#cdLong").focus();
+    $("#alP").value = ""; openDlg("#coinDlg", from); renderCoin(); renderAlerts(); $("#cdLong").focus();
   };
-  $("#cdCopy").addEventListener("click", () => copy($("#cdA").textContent, "Address"));
+  $("#cdCopy").addEventListener("click", () => copy($("#cdA").textContent, "Address", $("#cdA")));
   $("#cdLong").addEventListener("click", () => { closeOv(true); opener = null; goTrade(cdSym, "L"); });
   $("#cdShort").addEventListener("click", () => { closeOv(true); opener = null; goTrade(cdSym, "S"); });
 
@@ -1036,7 +1116,8 @@ img.coin{display:block;border-radius:50%;flex:none;background:#1a1a1a;box-shadow
     const prem = size / (cur.move * 10) * .1 * (cur.major ? .05 : 1);
     const fill = cur.price * (side === "L" ? 1 + prem : 1 - prem);
     const liq = side === "L" ? fill * (1 - 1 / L + .01) : fill * (1 + 1 / L - .01);
-    return { margin, L, size, prem, fill, liq, fee: size * .0006 };
+    const tp = num($("#tp").value), sl = num($("#sl").value);
+    return { margin, L, size, prem, fill, liq, fee: size * .0006, tp: tp > 0 ? tp : null, sl: sl > 0 ? sl : null };
   };
   const validate = q => {
     if (!Number.isFinite(q.margin) || q.margin <= 0) return "Enter a margin above $0.";
@@ -1045,6 +1126,10 @@ img.coin{display:block;border-radius:50%;flex:none;background:#1a1a1a;box-shadow
     if (side === "S" && !cur.shortOk) return `The short side of ${cur.sym} is full. Only longs can open right now.`;
     if ((side === "L" ? cur.oiL : cur.oiS) + q.size > cur.move * (cur.major ? 100 : 3)) return `That would pass the ${side === "L" ? "long" : "short"} ceiling for ${cur.sym}. Try a smaller size.`;
     if (q.prem > .03) return "Price premium is over 3%. Use a smaller size.";
+    const L = side === "L";
+    if (q.tp && (L ? q.tp <= q.fill : q.tp >= q.fill)) return `Take profit must be ${L ? "above" : "below"} the fill price (${px(q.fill)}).`;
+    if (q.sl && (L ? q.sl >= q.fill : q.sl <= q.fill)) return `Stop loss must be ${L ? "below" : "above"} the fill price (${px(q.fill)}).`;
+    if (q.sl && (L ? q.sl <= q.liq : q.sl >= q.liq)) return `Stop loss is past the liquidation price (${px(q.liq)}). Move it closer.`;
     return "";
   };
   const renderTicket = () => {
@@ -1052,37 +1137,54 @@ img.coin{display:block;border-radius:50%;flex:none;background:#1a1a1a;box-shadow
     const q = quote(), ok = Number.isFinite(q.size);
     $("#qS").textContent = ok ? usd(q.size) : "-"; $("#qF").textContent = ok ? px(q.fill) : "-";
     $("#qP").textContent = ok ? (q.prem * 1e4).toFixed(2) + " bps" : "-"; $("#qL").textContent = ok ? px(q.liq) : "-"; $("#qE").textContent = ok ? usd(q.fee) : "-";
+    const rel = v => v && ok ? pct((v / q.fill - 1) * 100 * (side === "L" ? 1 : -1), 1) : "";
+    $("#tpPct").textContent = rel(q.tp); $("#slPct").textContent = rel(q.sl);
+    $("#tpslHint").textContent = q.tp || q.sl ? [q.tp && "TP " + px(q.tp), q.sl && "SL " + px(q.sl)].filter(Boolean).join(" · ") : "optional";
     const e = validate(q); $("#err").textContent = $("#mg").value.trim() ? e : "";
     const g = $("#go"); g.disabled = !!e; g.className = "go " + side; g.textContent = `${side === "L" ? "Long" : "Short"} ${cur.sym} · ${$("#lv").value}×`;
   };
   $("#mg").addEventListener("input", renderTicket); $("#lv").addEventListener("input", renderTicket);
-  $$(".pct button").forEach(b => b.addEventListener("click", () => { const L = +$("#lv").value; $("#mg").value = (Math.floor(st.bal * +b.dataset.p / (1 + L * .0006) * 100) / 100).toFixed(2); renderTicket(); }));
+  $("#tp").addEventListener("input", renderTicket); $("#sl").addEventListener("input", renderTicket);
+  const plain = v => String(+v.toPrecision(v < .001 ? 4 : 6));
+  $("#tpslQuick").addEventListener("click", e => {
+    const b = e.target.closest("button"); if (!b) return; const f = quote().fill, dir = side === "L" ? 1 : -1;
+    if (!(f > 0)) return;
+    if (b.dataset.tp) $("#tp").value = plain(f * (1 + dir * b.dataset.tp / 100));
+    if (b.dataset.sl) $("#sl").value = plain(f * (1 - dir * b.dataset.sl / 100));
+    if ("clr" in b.dataset) { $("#tp").value = ""; $("#sl").value = ""; }
+    renderTicket();
+  });
+  $$(".pct button[data-p]").forEach(b => b.addEventListener("click", () => { const L = +$("#lv").value; $("#mg").value = (Math.floor(st.bal * +b.dataset.p / (1 + L * .0006) * 100) / 100).toFixed(2); renderTicket(); }));
   $("#ticket").addEventListener("submit", e => {
     e.preventDefault(); const q = quote(), err = validate(q); if (err) { $("#err").textContent = err; return; }
-    st.bal -= q.margin + q.fee; st.pos.unshift({ id: st.id++, sym: cur.sym, side, entry: q.fill, size: q.size, margin: q.margin, lev: q.L, liq: q.liq });
+    st.bal -= q.margin + q.fee; st.pos.unshift({ id: st.id++, sym: cur.sym, side, entry: q.fill, size: q.size, margin: q.margin, lev: q.L, liq: q.liq, tp: q.tp, sl: q.sl }); $("#tp").value = ""; $("#sl").value = "";
     if (side === "L") cur.oiL += q.size; else cur.oiS += q.size;
     save(); renderTicket(); renderPos(); drawChart();
     pushEv(`<span class="ev">you <span class="${side === "L" ? "up" : "down"}">${side === "L" ? "longed" : "shorted"}</span> ${coinIcon(cur, 16)}<b>${cur.sym}</b> · ${usd(q.margin)}</span>`);
     toast(`${side === "L" ? "Longed" : "Shorted"} ${cur.sym} · ${usd(q.size)} at ${px(q.fill)}`);
   });
-  $("#reset").addEventListener("click", () => { for (const p of st.pos) { const m = bySym(p.sym); if (p.side === "L") m.oiL -= p.size; else m.oiS -= p.size; } Object.assign(st, { bal: START, pos: [], realized: 0, closed: 0, wins: 0 }); save(); renderTicket(); renderPos(); drawChart(); renderLb(); toast("Paper balance reset to $10,000"); });
+  $("#reset").addEventListener("click", () => { for (const p of st.pos) { const m = bySym(p.sym); if (p.side === "L") m.oiL -= p.size; else m.oiS -= p.size; } Object.assign(st, { bal: START, pos: [], realized: 0, closed: 0, wins: 0, best: null }); save(); renderTicket(); renderPos(); drawChart(); renderLb(); toast("Paper balance reset to $10,000"); });
   const pnl = p => { const r = bySym(p.sym).price / p.entry - 1; return p.size * (p.side === "L" ? r : -r); };
-  const closePos = (id, liq) => {
+  const closePos = (id, reason) => {
+    const liq = reason === "liq";
     const i = st.pos.findIndex(p => p.id === id); if (i < 0) return; const p = st.pos[i], m = bySym(p.sym);
     const r = liq ? -p.margin : Math.min(pnl(p), m.major ? Infinity : p.size * 3), fee = liq ? 0 : p.size * .0006, net = Math.max(-p.margin, r - fee);
     st.bal += p.margin + net; if (p.side === "L") m.oiL -= p.size; else m.oiS -= p.size;
     st.realized += net; st.closed++; if (net > 0) st.wins++;
+    if (!st.best || net > st.best.net) st.best = { sym: p.sym, net };
+    if (net > 0) confetti();
     st.pos.splice(i, 1); save(); renderPos(); renderTicket(); drawChart(); renderLb();
-    toast(liq ? `${p.sym} ${p.side === "L" ? "long" : "short"} liquidated at ${px(m.price)}` : `Closed ${p.sym} · ${sgn(net)}`);
+    const why = { liq: "liquidated", tp: "take profit hit", sl: "stop loss hit" }[reason];
+    toast(why ? `${p.sym} ${p.side === "L" ? "long" : "short"} ${why} at ${px(m.price)} · ${sgn(net)}` : `Closed ${p.sym} · ${sgn(net)}`);
   };
-  $("#pos").addEventListener("click", e => { const b = e.target.closest("[data-x]"); if (b) closePos(+b.dataset.x); });
+  $("#pos").addEventListener("click", e => { const b = e.target.closest("[data-x]"); if (b) closePos(+b.dataset.x); const sh = e.target.closest("[data-share]"); if (sh) openShare(+sh.dataset.share, sh); });
   let posKey = "";
   const renderPos = () => {
     const key = st.pos.map(p => p.id).join(",");
-    if (!st.pos.length) { if (posKey !== "empty") { $("#pos").innerHTML = `<tr><td colspan="8" class="empty">No positions yet. Pick a side above, or hit L / S on any coin.</td></tr>`; posKey = "empty"; } $("#upnl").textContent = ""; return; }
+    if (!st.pos.length) { if (posKey !== "empty") { $("#pos").innerHTML = `<tr><td colspan="9" class="empty">No positions yet. Pick a side above, or hit L / S on any coin.</td></tr>`; posKey = "empty"; } $("#upnl").textContent = ""; return; }
     if (key !== posKey) {   // rebuild only when the set of positions changes, so Close buttons stay put between ticks
       posKey = key;
-      $("#pos").innerHTML = st.pos.map(p => `<tr data-id="${p.id}"><td><span class="stag ${p.side}">${p.side === "L" ? "LONG" : "SHORT"} ${p.lev}×</span>${coinIcon(bySym(p.sym), 18).replace('class="coin"', 'class="coin" style="display:inline-block;vertical-align:-4px;margin-right:6px"')}${p.sym}</td><td>${usd(p.size)}</td><td>${px(p.entry)}</td><td class="mk"></td><td>${px(p.liq)}</td><td>${usd(p.margin)}</td><td class="pl"></td><td><button type="button" class="xb" data-x="${p.id}">Close</button></td></tr>`).join("");
+      $("#pos").innerHTML = st.pos.map(p => `<tr data-id="${p.id}"><td><span class="stag ${p.side}">${p.side === "L" ? "LONG" : "SHORT"} ${p.lev}×</span>${coinIcon(bySym(p.sym), 18).replace('class="coin"', 'class="coin" style="display:inline-block;vertical-align:-4px;margin-right:6px"')}${p.sym}</td><td>${usd(p.size)}</td><td>${px(p.entry)}</td><td class="mk"></td><td>${px(p.liq)}</td><td class="tpsl-cell">${p.tp ? `<span class="up">${px(p.tp)}</span>` : ""}${p.sl ? `<span class="down">${px(p.sl)}</span>` : ""}${p.tp || p.sl ? "" : '<span class="mute">-</span>'}</td><td>${usd(p.margin)}</td><td class="pl"></td><td><div class="act"><button type="button" class="xb sh" data-share="${p.id}" aria-label="Share ${p.sym} trade">Share</button><button type="button" class="xb" data-x="${p.id}">Close</button></div></td></tr>`).join("");
     }
     let t = 0;
     for (const p of st.pos) {
@@ -1094,12 +1196,14 @@ img.coin{display:block;border-radius:50%;flex:none;background:#1a1a1a;box-shadow
   };
 
   // chart
+  let tfN = 150;
+  $$(".tfs button").forEach(b => b.addEventListener("click", () => { $$(".tfs button").forEach(x => x.setAttribute("aria-pressed", String(x === b))); tfN = +b.dataset.tf; drawChart(); }));
   const cv = $("#chart"), cx = cv.getContext("2d");
   const drawChart = () => {
     const dpr = Math.min(devicePixelRatio || 1, 2), W = cv.clientWidth, H = cv.clientHeight; if (!W || !H) return;
     if (cv.width !== Math.round(W * dpr) || cv.height !== Math.round(H * dpr)) { cv.width = Math.round(W * dpr); cv.height = Math.round(H * dpr); }
     cx.setTransform(dpr, 0, 0, dpr, 0, 0); cx.clearRect(0, 0, W, H);
-    const d = cur.hist.slice(-180), pr = 92, pt = 34, pb = 16, w = W - pr, h = H - pt - pb;
+    const d = cur.hist.slice(-tfN), pr = 92, pt = 34, pb = 16, w = W - pr, h = H - pt - pb;
     let lo = Math.min(...d), hi = Math.max(...d); const sp = hi - lo || hi * .001; lo -= sp * .1; hi += sp * .1;
     const X = i => i / (d.length - 1) * w, Y = v => pt + (1 - (v - lo) / (hi - lo)) * h, last = d[d.length - 1], ly = Y(last);
     cx.font = "500 10.5px Geist Mono, monospace"; cx.textBaseline = "middle";
@@ -1111,7 +1215,7 @@ img.coin{display:block;border-radius:50%;flex:none;background:#1a1a1a;box-shadow
     for (const p of st.pos.filter(p => p.sym === cur.sym)) { const y = Y(p.entry); if (y < pt || y > pt + h) continue; cx.setLineDash([5, 4]); cx.strokeStyle = p.side === "L" ? "#2be38f" : "#ff4d5e"; cx.globalAlpha = .6; cx.beginPath(); cx.moveTo(0, y); cx.lineTo(w, y); cx.stroke(); cx.setLineDash([]); cx.globalAlpha = 1; }
     cx.fillStyle = col; cx.beginPath(); cx.arc(w, ly, 3.5, 0, 7); cx.fill(); cx.fillRect(w + 4, ly - 10, pr - 6, 20); cx.fillStyle = "#0a0a0a"; cx.font = "600 10.5px Geist Mono, monospace"; cx.fillText(px(last), w + 9, ly);
     if (hoverX != null && hoverX >= 0 && hoverX <= w) { const i = Math.round(hoverX / w * (d.length - 1)), x = X(i), y = Y(d[i]); cx.strokeStyle = "#444"; cx.beginPath(); cx.moveTo(x, pt); cx.lineTo(x, pt + h); cx.moveTo(0, y); cx.lineTo(w, y); cx.stroke(); cx.fillStyle = "#f5f5f5"; cx.beginPath(); cx.arc(x, y, 3.5, 0, 7); cx.fill(); $("#tip").textContent = `${px(d[i])} · ${(d.length - 1 - i) * 2}s ago`; }
-    else $("#tip").textContent = `${cur.sym}-PERP · last 6 min`;
+    else $("#tip").textContent = `${cur.sym}-PERP · last ${Math.round(tfN * 2 / 60)} min`;
   };
   cv.addEventListener("pointermove", e => { hoverX = e.offsetX; drawChart(); }); cv.addEventListener("pointerleave", () => { hoverX = null; drawChart(); });
   new ResizeObserver(drawChart).observe(cv);
@@ -1121,7 +1225,7 @@ img.coin{display:block;border-radius:50%;flex:none;background:#1a1a1a;box-shadow
   const TRADERS = Array.from({ length: 12 }, (_, i) => { const a = "0x" + hash("trader" + i).toString(16).padStart(8, "0") + hash("t" + i).toString(16).padStart(8, "0"); return { a, base: 300 + (hash(a) % 9000), wr: 38 + hash(a + "w") % 40, n: 12 + hash(a + "n") % 260, best: coins()[hash(a + "b") % coins().length] }; });
   const renderLb = () => {
     const rows = TRADERS.map(t => ({ ...t, pnl: t.base * (per / 7) ** .6 * (1 + (hash(t.a + per) % 30) / 100), n: Math.max(1, Math.round(t.n * per / 7)) }));
-    if (st.closed) rows.push({ a: "you", me: true, pnl: st.realized, wr: Math.round(st.wins / st.closed * 100), n: st.closed, best: cur });
+    if (st.closed) rows.push({ a: "you", me: true, pnl: st.realized, wr: Math.round(st.wins / st.closed * 100), n: st.closed, best: bySym(st.best?.sym) || cur });
     rows.sort((a, b) => b.pnl - a.pnl);
     const roi = r => r.pnl / (r.me ? START : 2000 + hash(r.a) % 6000) * 100;
     $("#podium").innerHTML = rows.slice(0, 3).map((r, i) => `<div class="pd"><span class="rk">#${i + 1}</span>${avatar(r.a, 40)}<div class="grow"><div class="w">${r.me ? "You" : short(r.a)}</div><div class="nm">${r.n} trades · ${r.wr}% wins</div></div><div class="r ${r.pnl >= 0 ? "up" : "down"}">${sgn(r.pnl).replace(/\.\d+$/, "")}</div></div>`).join("");
@@ -1149,7 +1253,19 @@ img.coin{display:block;border-radius:50%;flex:none;background:#1a1a1a;box-shadow
   document.addEventListener("keydown", e => {
     const typing = /INPUT|TEXTAREA|SELECT/.test(document.activeElement.tagName);
     if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === "k" || (e.key === "/" && !typing)) { e.preventDefault(); openSearch(); return; }
-    if (e.key === "Escape") closeOv();
+    if (e.key === "Escape") { closeOv(); if (!$("#drawer").hidden) { $("#drawer").hidden = true; $("#burger").setAttribute("aria-expanded", "false"); $("#burger").focus(); } }
+    const anyOv = $$(".ov").some(o => !o.hidden);
+    if (!typing && !e.metaKey && !e.ctrlKey && !e.altKey) {
+      const key = e.key.toLowerCase();
+      if (e.key === "?") { e.preventDefault(); openDlg("#keysDlg"); return; }
+      if (key === "w" && !$("#coinDlg").hidden && cdSym) { toggleWatch(cdSym); return; }
+      if (!anyOv) {
+        if (key === "l") { setSide("L"); toast("Ticket set to long"); }
+        if (key === "s") { setSide("S"); toast("Ticket set to short"); }
+        if (key === "t") $("#trade").scrollIntoView({ behavior: RM ? "auto" : "smooth" });
+        if (key === "m") $("#markets").scrollIntoView({ behavior: RM ? "auto" : "smooth" });
+      }
+    }
     if (!$("#srch").hidden) {
       if (e.key === "ArrowDown") { e.preventDefault(); sel = Math.min(sel + 1, hits.length - 1); renderSearch(); }
       if (e.key === "ArrowUp") { e.preventDefault(); sel = Math.max(sel - 1, 0); renderSearch(); }
@@ -1169,7 +1285,13 @@ img.coin{display:block;border-radius:50%;flex:none;background:#1a1a1a;box-shadow
     seed = (Date.now() % 2147483646) + 1;
     for (const m of M) { m.prev = m.price; m.price *= 1 + gauss() * m.vol; m.hist.push(m.price); if (m.hist.length > 300) m.hist.shift(); }
     block += 1 + Math.floor(rnd() * 3); vaultNav += (rnd() - .45) * 120; vol24 += rnd() * 300; if (rnd() < .5) fills24++;
-    for (const p of [...st.pos]) { const m = bySym(p.sym); if ((p.side === "L" && m.price <= p.liq) || (p.side === "S" && m.price >= p.liq)) closePos(p.id, true); }
+    for (const p of [...st.pos]) {
+      const m = bySym(p.sym), L = p.side === "L";
+      if (L ? m.price <= p.liq : m.price >= p.liq) closePos(p.id, "liq");
+      else if (p.sl && (L ? m.price <= p.sl : m.price >= p.sl)) closePos(p.id, "sl");
+      else if (p.tp && (L ? m.price >= p.tp : m.price <= p.tp)) closePos(p.id, "tp");
+    }
+    checkAlerts();
     renderNav(); tickPools(); tickCards(); renderStats(); renderHead(); renderTicket(); renderPos(); drawChart();
     if (cdSym && !$("#coinDlg").hidden) renderCoin();
     renderLogoPop(); renderPart();
@@ -1269,7 +1391,80 @@ img.coin{display:block;border-radius:50%;flex:none;background:#1a1a1a;box-shadow
   $("footer").addEventListener("pointermove", e => { const r = bw.getBoundingClientRect(); bw.style.setProperty("--mx", e.clientX - r.left + "px"); bw.style.setProperty("--my", e.clientY - r.top + "px"); });
   $("footer").addEventListener("pointerleave", () => { bw.style.setProperty("--mx", "-30%"); });
 
-  renderNav(); renderLogoPop(); onScroll(); renderPools(); renderStats(); renderCards(); renderSkew(); setMarket("ETH"); renderPos(); renderVault(); renderConn(); renderLb();
+
+  // ---------- price alerts ----------
+  const renderAlerts = () => {
+    const list = st.alerts.filter(a => a.sym === cdSym);
+    $("#alList").innerHTML = list.map(a => `<span class="al-chip"><span class="${a.dir === "up" ? "up" : "down"}">${a.dir === "up" ? "≥" : "≤"}</span>${px(a.price)}<button type="button" data-al="${a.id}" aria-label="Remove alert at ${px(a.price)}">×</button></span>`).join("");
+  };
+  const addAlert = () => {
+    const m = bySym(cdSym), v = num($("#alP").value);
+    if (!m || !(v > 0)) { toast("Enter a price above 0 for the alert"); return; }
+    if (Math.abs(v / m.price - 1) < .0005) { toast("That's the current price. Pick a level above or below it."); return; }
+    st.alerts.push({ id: Date.now(), sym: m.sym, price: v, dir: v > m.price ? "up" : "down" }); save();
+    $("#alP").value = ""; renderAlerts(); toast(`Alert set: ${m.sym} ${v > m.price ? "rises to" : "falls to"} ${px(v)}`);
+  };
+  $("#alSet").addEventListener("click", addAlert);
+  $("#alP").addEventListener("keydown", e => { if (e.key === "Enter") { e.preventDefault(); addAlert(); } });
+  $("#alList").addEventListener("click", e => { const b = e.target.closest("[data-al]"); if (!b) return; st.alerts = st.alerts.filter(a => a.id !== +b.dataset.al); save(); renderAlerts(); });
+  const checkAlerts = () => {
+    const hit = st.alerts.filter(a => { const m = bySym(a.sym); return a.dir === "up" ? m.price >= a.price : m.price <= a.price; });
+    if (!hit.length) return;
+    st.alerts = st.alerts.filter(a => !hit.includes(a)); save();
+    for (const a of hit) {
+      const m = bySym(a.sym);
+      toast(`🔔 ${a.sym} ${a.dir === "up" ? "reached" : "dropped to"} ${px(m.price)}`);
+      pushEv(`<span class="ev">alert <span style="color:var(--warn)">triggered</span> ${coinIcon(m, 16)}<b>${a.sym}</b> · ${px(a.price)}</span>`);
+      $$(`#cards .c[data-sym="${a.sym}"], #poolRows .prow[data-sym="${a.sym}"]`).forEach(el => { el.classList.remove("hit"); void el.offsetWidth; el.classList.add("hit"); });
+    }
+    if (!$("#coinDlg").hidden) renderAlerts();
+  };
+
+  // ---------- share a trade ----------
+  let shareText = "";
+  const NAVMARK_SVG = document.querySelector(".logo .mark").outerHTML;
+  const openShare = (id, from) => {
+    const p = st.pos.find(x => x.id === id); if (!p) return; const m = bySym(p.sym), v = pnl(p), r = v / p.margin * 100;
+    shareText = `${p.side === "L" ? "Long" : "Short"} ${p.sym} ${p.lev}× on Kestrel (paper): ${pct(r, 1)} (${sgn(v)}). Entry ${px(p.entry)}, mark ${px(m.price)}.`;
+    $("#pnlCard").innerHTML = `${NAVMARK_SVG}<div class="brand">${NAVMARK_SVG}KESTREL <span class="tag">PAPER</span></div>
+      <div class="row">${coinIcon(m, 34)}<div><div class="tk">${p.sym}-PERP</div><span class="stag ${p.side}">${p.side === "L" ? "LONG" : "SHORT"} ${p.lev}×</span></div></div>
+      <div class="big ${v >= 0 ? "up" : "down"}">${pct(r, 1)}</div>
+      <div class="sub"><div>PnL<b class="${v >= 0 ? "up" : "down"}">${sgn(v)}</b></div><div>Entry<b>${px(p.entry)}</b></div><div>Mark<b>${px(m.price)}</b></div></div>`;
+    $("#shTxt").value = shareText; openDlg("#shareDlg", from); $("#shCopy").focus();
+  };
+  $("#shCopy").addEventListener("click", () => copy(shareText, "Trade summary", $("#shTxt")));
+
+  // ---------- confetti on a winning close ----------
+  const cf = $("#confetti"), cfx = cf.getContext("2d"); let bits = [], cfOn = false;
+  function confetti() {
+    if (RM) return;
+    const W = cf.width = innerWidth, H = cf.height = innerHeight, cols = ["#2be38f", "#f5f5f5", "#ffb547", "#7cc4ff"];
+    for (let i = 0; i < 120; i++) bits.push({ x: W / 2 + (Math.random() - .5) * 200, y: H * .7, vx: (Math.random() - .5) * 14, vy: -8 - Math.random() * 12, r: Math.random() * 6.3, vr: (Math.random() - .5) * .4, c: cols[i % 4], w: 4 + Math.random() * 5, life: 0 });
+    if (!cfOn) { cfOn = true; requestAnimationFrame(stepCf); }
+  }
+  const stepCf = () => {
+    cfx.clearRect(0, 0, cf.width, cf.height);
+    bits = bits.filter(b => b.life < 140 && b.y < cf.height + 20);
+    for (const b of bits) { b.life++; b.vy += .35; b.vx *= .985; b.x += b.vx; b.y += b.vy; b.r += b.vr; cfx.save(); cfx.translate(b.x, b.y); cfx.rotate(b.r); cfx.globalAlpha = Math.max(0, 1 - b.life / 140); cfx.fillStyle = b.c; cfx.fillRect(-b.w / 2, -b.w / 4, b.w, b.w / 2); cfx.restore(); }
+    if (bits.length) requestAnimationFrame(stepCf); else { cfOn = false; cfx.clearRect(0, 0, cf.width, cf.height); }
+  };
+
+  // ---------- funding countdown, back to top, hero examples, highlight replay ----------
+  const renderFund = () => { const d = new Date(), left = 3600 - (d.getMinutes() * 60 + d.getSeconds()); $("#tFund").textContent = `${String(Math.floor(left / 60)).padStart(2, "0")}:${String(left % 60).padStart(2, "0")}`; };
+  setInterval(() => { renderFund(); if (!document.hidden) renderLogoPop(); }, 1000);
+  $("#toTop").addEventListener("click", () => { scrollTo({ top: 0, behavior: RM ? "auto" : "smooth" }); $(".logo").focus({ preventScroll: true }); });
+  addEventListener("scroll", () => { $("#toTop").hidden = scrollY < 900; }, { passive: true });
+  $(".try").addEventListener("click", e => {
+    const b = e.target.closest("button[data-try]"); if (!b) return; const t = b.dataset.try;
+    $("#addr").value = t === "bad" ? "0x12zz" : t === "new" ? "0x" + Array.from({ length: 40 }, () => "0123456789abcdef"[Math.floor(Math.random() * 16)]).join("") : bySym(t).addr;
+    $("#addr").dispatchEvent(new Event("input")); $("#addr").focus();
+  });
+  if ("IntersectionObserver" in window && !RM) {
+    const hio = new IntersectionObserver(es => es.forEach(e => { if (!e.isIntersecting) return; const el = e.target; el.style.animation = "none"; void el.offsetWidth; el.style.animation = ""; hio.unobserve(el); }), { threshold: .8 });
+    $$("section.s .hl").forEach(el => hio.observe(el));
+  }
+  $("#keysBtn").addEventListener("click", e => openDlg("#keysDlg", e.currentTarget));
+  renderNav(); renderLogoPop(); onScroll(); renderFund(); renderPools(); renderStats(); renderCards(); renderSkew(); setMarket("ETH"); renderPos(); renderVault(); renderConn(); renderLb();
   fillTape(); requestAnimationFrame(stepTape);
   if (document.fonts) document.fonts.ready.then(() => { drawChart(); renderSkew(); });
   setInterval(() => { if (!document.hidden) tick(); }, 2000);
